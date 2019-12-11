@@ -38,6 +38,7 @@ func main() {
 	}
 	//fmt.Printf("%s\n", all)
 
+	//获得城市列表
 	printCityList(all)
 
 }
