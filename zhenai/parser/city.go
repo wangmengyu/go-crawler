@@ -22,7 +22,7 @@ func ParseCity(bytes []byte) engine.ParseResult {
 			results.Requests,
 			engine.Request{
 				Url:        string(url),
-				ParserFunc: engine.NilParse,
+				ParserFunc: ParseProfile,
 			})
 		results.Items = append(results.Items, "User "+string(user))
 
