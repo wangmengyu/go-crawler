@@ -6,7 +6,6 @@ import (
 	"golang.org/x/net/html/charset"
 	"golang.org/x/text/encoding"
 	"golang.org/x/text/transform"
-	"io"
 	"io/ioutil"
 	"net/http"
 )
@@ -29,20 +28,21 @@ func Fetch(url string) ([]byte, error) {
 	}
 
 	//获得当前页面的编码
-	e, err := determineEncoding(resp.Body)
+	bodyReader := bufio.NewReader(resp.Body)
+	e, err := determineEncoding(bodyReader)
 	if err != nil {
 		return nil, err
 	}
 	//将当前页面编码转换为utf8
-	utf8Body := transform.NewReader(resp.Body, e.NewDecoder())
+	utf8Body := transform.NewReader(bodyReader, e.NewDecoder())
 
 	//读取UTF8编码的HTML内容
 	return ioutil.ReadAll(utf8Body)
 
 }
 
-func determineEncoding(r io.Reader) (encoding.Encoding, error) {
-	bytes, err := bufio.NewReader(r).Peek(1024)
+func determineEncoding(r *bufio.Reader) (encoding.Encoding, error) {
+	bytes, err := r.Peek(1024)
 	if err != nil {
 		return nil, err
 	}
