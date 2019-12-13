@@ -5,37 +5,33 @@ import (
 )
 
 /**
-并发版的引擎
+  并发版的引擎
 */
 type ConcurrentEngine struct {
 	Scheduler   Scheduler // 调度器
 	WorkerCount int       // 并发数量
-
 }
 
 /**
-  调度器：
-     一群调度器回用到的接口的集合
+  调度器，接口类型：
+    管理一群调度器回用到的接口的集合
 */
 type Scheduler interface {
 	Submit(Request)
 	ConfigureMasterWorkerChan(chan Request) // 设置in chan
+	WorkerReady(chan Request)               // 准备请求
+	Run()                                   //总控
 }
 
 /**
   并发引擎的运行方法
 */
 func (e *ConcurrentEngine) Run(seeds ...Request) {
-
-	//建立worker
-	//公用一个输入
-	in := make(chan Request)
-	//配置scheduler的In channel
-	e.Scheduler.ConfigureMasterWorkerChan(in)
-
 	out := make(chan ParseResult)
+	e.Scheduler.Run()
+
 	for i := 0; i < e.WorkerCount; i++ {
-		createWorker(in, out)
+		createWorker(out, e.Scheduler)
 	}
 
 	//在channel都建立好之后再提交数据
@@ -60,15 +56,17 @@ func (e *ConcurrentEngine) Run(seeds ...Request) {
 /**
 创建并发的worker
 */
-func createWorker(in chan Request, out chan ParseResult) {
+func createWorker(out chan ParseResult, s Scheduler) {
+	in := make(chan Request)
 	go func() {
 		for {
+			s.WorkerReady(in)
 			request := <-in
-			parseResult, err := Worker(request)
+			result, err := Worker(request)
 			if err != nil {
 				continue
 			}
-			out <- parseResult
+			out <- result
 		}
 	}()
 

@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="358d81ac-c74f-42d0-bd7a-b0f0dc544743" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/engine/concurrent.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduler/simple.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/engine.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/simple.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fetcher/fetcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/fetcher/fetcher.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler/queued.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/concurrent.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/concurrent.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhenai/parser/city.go" beforeDir="false" afterPath="$PROJECT_DIR$/zhenai/parser/city.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhenai/parser/citylist.go" beforeDir="false" afterPath="$PROJECT_DIR$/zhenai/parser/citylist.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhenai/parser/profile.go" beforeDir="false" afterPath="$PROJECT_DIR$/zhenai/parser/profile.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler/simple.go" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler/simple.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +122,8 @@
     <MESSAGE value="city parser" />
     <MESSAGE value="解析profile" />
     <MESSAGE value="单机版的抓取" />
-    <option name="LAST_COMMIT_MESSAGE" value="单机版的抓取" />
+    <MESSAGE value="并发的抓取" />
+    <option name="LAST_COMMIT_MESSAGE" value="并发的抓取" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -136,49 +134,49 @@
       <screen x="0" y="23" width="1280" height="704" />
     </state>
     <state x="140" y="23" key="#Go_Modules_(vgo)/0.23.1280.704@0.23.1280.704" timestamp="1576023941765" />
-    <state x="131" y="23" key="CommitChangelistDialog2" timestamp="1576222762062">
+    <state x="131" y="23" key="CommitChangelistDialog2" timestamp="1576222777317">
       <screen x="0" y="23" width="1280" height="704" />
     </state>
-    <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.704@0.23.1280.704" timestamp="1576222762062" />
+    <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.704@0.23.1280.704" timestamp="1576222777317" />
     <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.706@0.23.1280.706" timestamp="1576053240177" />
     <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.710@0.23.1280.710" timestamp="1576064628532" />
     <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.723@0.23.1280.723" timestamp="1576152826807" />
-    <state width="1226" height="233" key="GridCell.Tab.0.bottom" timestamp="1576222549745">
+    <state width="1226" height="26" key="GridCell.Tab.0.bottom" timestamp="1576226250223">
       <screen x="0" y="23" width="1280" height="704" />
     </state>
-    <state width="1226" height="233" key="GridCell.Tab.0.bottom/0.23.1280.704@0.23.1280.704" timestamp="1576222549745" />
+    <state width="1226" height="26" key="GridCell.Tab.0.bottom/0.23.1280.704@0.23.1280.704" timestamp="1576226250223" />
     <state width="1226" height="273" key="GridCell.Tab.0.bottom/0.23.1280.706@0.23.1280.706" timestamp="1576148959624" />
     <state width="1226" height="26" key="GridCell.Tab.0.bottom/0.23.1280.710@0.23.1280.710" timestamp="1576064688510" />
     <state width="1226" height="161" key="GridCell.Tab.0.bottom/0.23.1280.723@0.23.1280.723" timestamp="1576152910200" />
     <state width="1226" height="161" key="GridCell.Tab.0.bottom/0.23.1280.724@0.23.1280.724" timestamp="1576152286787" />
-    <state width="1226" height="233" key="GridCell.Tab.0.center" timestamp="1576222549741">
+    <state width="1226" height="26" key="GridCell.Tab.0.center" timestamp="1576226250222">
       <screen x="0" y="23" width="1280" height="704" />
     </state>
-    <state width="1226" height="233" key="GridCell.Tab.0.center/0.23.1280.704@0.23.1280.704" timestamp="1576222549741" />
+    <state width="1226" height="26" key="GridCell.Tab.0.center/0.23.1280.704@0.23.1280.704" timestamp="1576226250222" />
     <state width="1226" height="273" key="GridCell.Tab.0.center/0.23.1280.706@0.23.1280.706" timestamp="1576148959623" />
     <state width="1226" height="26" key="GridCell.Tab.0.center/0.23.1280.710@0.23.1280.710" timestamp="1576064688509" />
     <state width="1226" height="161" key="GridCell.Tab.0.center/0.23.1280.723@0.23.1280.723" timestamp="1576152910199" />
     <state width="1226" height="161" key="GridCell.Tab.0.center/0.23.1280.724@0.23.1280.724" timestamp="1576152286785" />
-    <state width="1226" height="233" key="GridCell.Tab.0.left" timestamp="1576222549741">
+    <state width="1226" height="26" key="GridCell.Tab.0.left" timestamp="1576226250221">
       <screen x="0" y="23" width="1280" height="704" />
     </state>
-    <state width="1226" height="233" key="GridCell.Tab.0.left/0.23.1280.704@0.23.1280.704" timestamp="1576222549741" />
+    <state width="1226" height="26" key="GridCell.Tab.0.left/0.23.1280.704@0.23.1280.704" timestamp="1576226250221" />
     <state width="1226" height="273" key="GridCell.Tab.0.left/0.23.1280.706@0.23.1280.706" timestamp="1576148959622" />
     <state width="1226" height="26" key="GridCell.Tab.0.left/0.23.1280.710@0.23.1280.710" timestamp="1576064688509" />
     <state width="1226" height="161" key="GridCell.Tab.0.left/0.23.1280.723@0.23.1280.723" timestamp="1576152910199" />
     <state width="1226" height="161" key="GridCell.Tab.0.left/0.23.1280.724@0.23.1280.724" timestamp="1576152286784" />
-    <state width="1226" height="233" key="GridCell.Tab.0.right" timestamp="1576222549742">
+    <state width="1226" height="26" key="GridCell.Tab.0.right" timestamp="1576226250222">
       <screen x="0" y="23" width="1280" height="704" />
     </state>
-    <state width="1226" height="233" key="GridCell.Tab.0.right/0.23.1280.704@0.23.1280.704" timestamp="1576222549742" />
+    <state width="1226" height="26" key="GridCell.Tab.0.right/0.23.1280.704@0.23.1280.704" timestamp="1576226250222" />
     <state width="1226" height="273" key="GridCell.Tab.0.right/0.23.1280.706@0.23.1280.706" timestamp="1576148959623" />
     <state width="1226" height="26" key="GridCell.Tab.0.right/0.23.1280.710@0.23.1280.710" timestamp="1576064688509" />
     <state width="1226" height="161" key="GridCell.Tab.0.right/0.23.1280.723@0.23.1280.723" timestamp="1576152910199" />
     <state width="1226" height="161" key="GridCell.Tab.0.right/0.23.1280.724@0.23.1280.724" timestamp="1576152286786" />
-    <state x="140" y="53" key="Vcs.Push.Dialog.v2" timestamp="1576216691229">
+    <state x="140" y="53" key="Vcs.Push.Dialog.v2" timestamp="1576222781017">
       <screen x="0" y="23" width="1280" height="704" />
     </state>
-    <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.704@0.23.1280.704" timestamp="1576216691229" />
+    <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.704@0.23.1280.704" timestamp="1576222781017" />
     <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.706@0.23.1280.706" timestamp="1576053244967" />
     <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.710@0.23.1280.710" timestamp="1576064632593" />
     <state x="140" y="54" key="Vcs.Push.Dialog.v2/0.23.1280.723@0.23.1280.723" timestamp="1576152900981" />
