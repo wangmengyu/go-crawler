@@ -11,9 +11,6 @@ import (
 	"strings"
 )
 
-const purpleRe = `class="m-btn purple"[^>]*>([^<]+)<`
-const pinkRe = `class="m-btn pink"[^>]*>([^<]+)<`
-
 //上海 1 | 32岁 2 | 大学本科 3 | 未婚 4 | 167cm 5 | 8001-12000元 6
 const profileRe = `<div [^>]*class="des f-cl"[^>]*>([^<]+)</div>`
 const numRe = `([0-9]+)`
@@ -26,14 +23,6 @@ func ParseProfile(bytes []byte, name string, gender string) engine.ParseResult {
 	matches := regex.FindAllSubmatch(bytes, -1)
 	fmt.Println("matches:", matches)
 	profile := model.Profile{Name: name, Gender: gender}
-
-	/**
-	Age int  2
-	Height int 5
-	Income string 6
-	Marriage string 4
-	Hokou string 1
-	*/
 	results := engine.ParseResult{}
 
 	for _, match := range matches {
