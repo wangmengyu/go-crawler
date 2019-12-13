@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="358d81ac-c74f-42d0-bd7a-b0f0dc544743" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/engine/concurrent.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler/simple.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/engine.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/simple.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fetcher/fetcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/fetcher/fetcher.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhenai/parser/city.go" beforeDir="false" afterPath="$PROJECT_DIR$/zhenai/parser/city.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhenai/parser/citylist.go" beforeDir="false" afterPath="$PROJECT_DIR$/zhenai/parser/citylist.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhenai/parser/profile.go" beforeDir="false" afterPath="$PROJECT_DIR$/zhenai/parser/profile.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go Application" />
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="/usr/local/Cellar/go/1.13.4/libexec" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1UoURSxf2vyIRrdfn3oepG2B4xC" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/zhenai/parser" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/zhenai/parser" />
+      <recent name="$PROJECT_DIR$/doc" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/zhenai/parser" />
+      <recent name="$PROJECT_DIR$/doc" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Build.go build main.go">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go-crawler" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestParseCityList in go-craler.com/zhenai/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-crawler" />
+      <working_directory value="$PROJECT_DIR$/zhenai/parser" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="go-craler.com/zhenai/parser" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestParseCityList$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestParseProfile in go-craler.com/zhenai/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-crawler" />
+      <working_directory value="$PROJECT_DIR$/zhenai/parser" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="go-craler.com/zhenai/parser" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestParseProfile$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Test.TestParseProfile in go-craler.com/zhenai/parser" />
+        <item itemvalue="Go Test.TestParseCityList in go-craler.com/zhenai/parser" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="save" />
+    <MESSAGE value="get city list" />
+    <MESSAGE value="add doc" />
+    <MESSAGE value="单机抓取" />
+    <MESSAGE value="city parser" />
+    <MESSAGE value="解析profile" />
+    <MESSAGE value="单机版的抓取" />
+    <option name="LAST_COMMIT_MESSAGE" value="单机版的抓取" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+    <proxy>https://goproxy.cn,direct</proxy>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="140" y="23" key="#Go_Modules_(vgo)" timestamp="1576023941765">
+      <screen x="0" y="23" width="1280" height="704" />
+    </state>
+    <state x="140" y="23" key="#Go_Modules_(vgo)/0.23.1280.704@0.23.1280.704" timestamp="1576023941765" />
+    <state x="131" y="23" key="CommitChangelistDialog2" timestamp="1576222762062">
+      <screen x="0" y="23" width="1280" height="704" />
+    </state>
+    <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.704@0.23.1280.704" timestamp="1576222762062" />
+    <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.706@0.23.1280.706" timestamp="1576053240177" />
+    <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.710@0.23.1280.710" timestamp="1576064628532" />
+    <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.723@0.23.1280.723" timestamp="1576152826807" />
+    <state width="1226" height="233" key="GridCell.Tab.0.bottom" timestamp="1576222549745">
+      <screen x="0" y="23" width="1280" height="704" />
+    </state>
+    <state width="1226" height="233" key="GridCell.Tab.0.bottom/0.23.1280.704@0.23.1280.704" timestamp="1576222549745" />
+    <state width="1226" height="273" key="GridCell.Tab.0.bottom/0.23.1280.706@0.23.1280.706" timestamp="1576148959624" />
+    <state width="1226" height="26" key="GridCell.Tab.0.bottom/0.23.1280.710@0.23.1280.710" timestamp="1576064688510" />
+    <state width="1226" height="161" key="GridCell.Tab.0.bottom/0.23.1280.723@0.23.1280.723" timestamp="1576152910200" />
+    <state width="1226" height="161" key="GridCell.Tab.0.bottom/0.23.1280.724@0.23.1280.724" timestamp="1576152286787" />
+    <state width="1226" height="233" key="GridCell.Tab.0.center" timestamp="1576222549741">
+      <screen x="0" y="23" width="1280" height="704" />
+    </state>
+    <state width="1226" height="233" key="GridCell.Tab.0.center/0.23.1280.704@0.23.1280.704" timestamp="1576222549741" />
+    <state width="1226" height="273" key="GridCell.Tab.0.center/0.23.1280.706@0.23.1280.706" timestamp="1576148959623" />
+    <state width="1226" height="26" key="GridCell.Tab.0.center/0.23.1280.710@0.23.1280.710" timestamp="1576064688509" />
+    <state width="1226" height="161" key="GridCell.Tab.0.center/0.23.1280.723@0.23.1280.723" timestamp="1576152910199" />
+    <state width="1226" height="161" key="GridCell.Tab.0.center/0.23.1280.724@0.23.1280.724" timestamp="1576152286785" />
+    <state width="1226" height="233" key="GridCell.Tab.0.left" timestamp="1576222549741">
+      <screen x="0" y="23" width="1280" height="704" />
+    </state>
+    <state width="1226" height="233" key="GridCell.Tab.0.left/0.23.1280.704@0.23.1280.704" timestamp="1576222549741" />
+    <state width="1226" height="273" key="GridCell.Tab.0.left/0.23.1280.706@0.23.1280.706" timestamp="1576148959622" />
+    <state width="1226" height="26" key="GridCell.Tab.0.left/0.23.1280.710@0.23.1280.710" timestamp="1576064688509" />
+    <state width="1226" height="161" key="GridCell.Tab.0.left/0.23.1280.723@0.23.1280.723" timestamp="1576152910199" />
+    <state width="1226" height="161" key="GridCell.Tab.0.left/0.23.1280.724@0.23.1280.724" timestamp="1576152286784" />
+    <state width="1226" height="233" key="GridCell.Tab.0.right" timestamp="1576222549742">
+      <screen x="0" y="23" width="1280" height="704" />
+    </state>
+    <state width="1226" height="233" key="GridCell.Tab.0.right/0.23.1280.704@0.23.1280.704" timestamp="1576222549742" />
+    <state width="1226" height="273" key="GridCell.Tab.0.right/0.23.1280.706@0.23.1280.706" timestamp="1576148959623" />
+    <state width="1226" height="26" key="GridCell.Tab.0.right/0.23.1280.710@0.23.1280.710" timestamp="1576064688509" />
+    <state width="1226" height="161" key="GridCell.Tab.0.right/0.23.1280.723@0.23.1280.723" timestamp="1576152910199" />
+    <state width="1226" height="161" key="GridCell.Tab.0.right/0.23.1280.724@0.23.1280.724" timestamp="1576152286786" />
+    <state x="140" y="53" key="Vcs.Push.Dialog.v2" timestamp="1576216691229">
+      <screen x="0" y="23" width="1280" height="704" />
+    </state>
+    <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.704@0.23.1280.704" timestamp="1576216691229" />
+    <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.706@0.23.1280.706" timestamp="1576053244967" />
+    <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.710@0.23.1280.710" timestamp="1576064632593" />
+    <state x="140" y="54" key="Vcs.Push.Dialog.v2/0.23.1280.723@0.23.1280.723" timestamp="1576152900981" />
+    <state x="249" y="76" width="959" height="651" key="find.popup" timestamp="1576221920144">
+      <screen x="0" y="23" width="1280" height="704" />
+    </state>
+    <state x="249" y="76" width="959" height="651" key="find.popup/0.23.1280.704@0.23.1280.704" timestamp="1576221920144" />
+    <state x="249" y="89" width="782" height="574" key="find.popup/0.23.1280.706@0.23.1280.706" timestamp="1576043727167" />
+    <state x="249" y="77" width="959" height="656" key="find.popup/0.23.1280.710@0.23.1280.710" timestamp="1576063204887" />
+  </component>
+</project>
