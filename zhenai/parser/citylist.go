@@ -13,9 +13,8 @@ func ParseCityList(bytes []byte) engine.ParseResult {
 	regex := regexp.MustCompile(cityListRe)
 	matches := regex.FindAllSubmatch(bytes, -1)
 
-	limit := 10
 	for _, match := range matches {
-		fmt.Println("match:", match)
+		//fmt.Println("match:", match)
 		url := match[1]
 		city := match[2]
 		fmt.Printf("url:%s, city:%s\n", string(url), string(city))
@@ -26,10 +25,6 @@ func ParseCityList(bytes []byte) engine.ParseResult {
 				ParserFunc: ParseCity,
 			})
 		results.Items = append(results.Items, "City "+string(city))
-		limit--
-		if limit == 0 {
-			break
-		}
 
 	}
 

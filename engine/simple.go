@@ -5,7 +5,13 @@ import (
 	"log"
 )
 
-func Run(seeds ...Request) {
+/**
+简单调度器
+*/
+type SimpleEngine struct {
+}
+
+func (e SimpleEngine) Run(seeds ...Request) {
 	var requests []Request
 
 	//将所有seed放入处理队列
@@ -18,18 +24,11 @@ func Run(seeds ...Request) {
 		//取得一个请求
 		r := requests[0]
 		requests = requests[1:]
-
-		//获取网页内容
-		log.Printf("Fetching %s", r.Url)
-
-		bodys, err := fetcher.Fetch(r.Url)
+		parseResult, err := Worker(r)
 		if err != nil {
-			log.Printf("fetcher error url %s %v", r.Url, err)
 			continue
 		}
 
-		//将bodys内容进行解析
-		parseResult := r.ParserFunc(bodys)
 		//将返回中的URL送入requests队列中继续消耗
 		requests = append(requests, parseResult.Requests...)
 
@@ -40,4 +39,19 @@ func Run(seeds ...Request) {
 
 	}
 
+}
+
+func Worker(r Request) (ParseResult, error) {
+	//获取网页内容
+	log.Printf("Fetching %s", r.Url)
+
+	bodys, err := fetcher.Fetch(r.Url)
+	if err != nil {
+		log.Printf("fetcher error url %s %v", r.Url, err)
+		return ParseResult{}, err
+	}
+
+	//将bodys内容进行解析
+	parseResult := r.ParserFunc(bodys)
+	return parseResult, nil
 }

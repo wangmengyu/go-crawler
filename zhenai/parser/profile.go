@@ -1,7 +1,6 @@
 package parser
 
 import (
-	"fmt"
 	"go-craler.com/engine"
 	"go-craler.com/model"
 	"log"
@@ -19,9 +18,7 @@ var regex = regexp.MustCompile(profileRe)
 var regexNum = regexp.MustCompile(numRe)
 
 func ParseProfile(bytes []byte, name string, gender string) engine.ParseResult {
-
 	matches := regex.FindAllSubmatch(bytes, -1)
-	fmt.Println("matches:", matches)
 	profile := model.Profile{Name: name, Gender: gender}
 	results := engine.ParseResult{}
 

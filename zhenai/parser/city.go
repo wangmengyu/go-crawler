@@ -16,7 +16,7 @@ func ParseCity(bytes []byte) engine.ParseResult {
 	regexGen := regexp.MustCompile(genderRe)
 	matchesGen := regexGen.FindAllSubmatch(bytes, -1)
 	for i, match := range matches {
-		fmt.Println("match:", match)
+		//fmt.Println("match:", match)
 		url := match[1]
 		user := match[2] // 此处必须深度拷贝。因为该参数回传递给后续的抓取，只有深度拷贝才不会调用match.
 		gender := matchesGen[i][1]

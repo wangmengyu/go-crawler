@@ -9,21 +9,17 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"time"
 )
 
 /**
   获得指定url的HTML的UTF-8编码内容
 */
+var rateLimiter = time.Tick(10 * time.Millisecond)
+
 func Fetch(url string) ([]byte, error) {
 	//获得城市列表页的HTML内容
-	/*
-		resp, err := http.Get(url)
-		if err != nil {
-			return nil, err
-		}
-		defer resp.Body.Close()
-	*/
-
+	<-rateLimiter //限速
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
