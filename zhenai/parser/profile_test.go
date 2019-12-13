@@ -14,7 +14,7 @@ func TestParseProfile(t *testing.T) {
 
 	//fmt.Println(string(contents))
 
-	results := ParseProfile(contents)
+	results := ParseProfile(contents, "test", "test")
 
 	fmt.Printf("%v", results)
 
