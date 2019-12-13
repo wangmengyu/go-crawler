@@ -31,9 +31,12 @@ type ReadyNotifier interface {
   并发引擎的运行方法
 */
 func (e *ConcurrentEngine) Run(seeds ...Request) {
+	//建立输出管道
 	out := make(chan ParseResult)
+	//启动调度器
 	e.Scheduler.Run()
 
+	//开启并发worker
 	for i := 0; i < e.WorkerCount; i++ {
 		createWorker(e.Scheduler.WorkerChan(), out, e.Scheduler)
 	}
