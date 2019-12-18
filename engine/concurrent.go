@@ -1,16 +1,12 @@
 package engine
 
-import (
-	"go-craler.com/model"
-	"log"
-)
-
 /**
   并发版的引擎
 */
 type ConcurrentEngine struct {
-	Scheduler   Scheduler // 调度器
-	WorkerCount int       // 并发数量
+	Scheduler   Scheduler        // 调度器
+	WorkerCount int              // 并发数量
+	ItemChan    chan interface{} //用于save的管道
 }
 
 /**
@@ -54,13 +50,11 @@ func (e *ConcurrentEngine) Run(seeds ...Request) {
 	//从out chan不断读取数据出来进行打印
 	for {
 		result := <-out
-		profileCount := 0
+
 		for _, item := range result.Items {
-			_, ok := item.(model.Profile)
-			if ok {
-				log.Printf("Got profile: #%d:%v", profileCount, item)
-				profileCount++
-			}
+			go func() {
+				e.ItemChan <- item
+			}()
 		}
 
 		// url 去重 dedup

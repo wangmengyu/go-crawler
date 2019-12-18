@@ -2,6 +2,7 @@ package main
 
 import (
 	"go-craler.com/engine"
+	"go-craler.com/persist"
 	"go-craler.com/scheduler"
 	"go-craler.com/zhenai/parser"
 )
@@ -12,6 +13,7 @@ func main() {
 	e := engine.ConcurrentEngine{
 		Scheduler:   &scheduler.QueuedScheduler{},
 		WorkerCount: 10,
+		ItemChan:    persist.ItemSaver(),
 	}
 	/*
 		e.Run(engine.Request{Url: "http://www.zhenai.com/zhenghun/", ParserFunc: parser.ParseCityList})

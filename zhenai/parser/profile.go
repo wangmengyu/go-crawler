@@ -51,7 +51,7 @@ func ParseProfile(bytes []byte, name string, gender string) engine.ParseResult {
 		}
 	}
 
-	printProfile(profile)
+	//printProfile(profile)
 	results.Items = append(results.Items, profile)
 
 	return results
