@@ -1,6 +1,7 @@
 package parser
 
 import (
+	"fmt"
 	"go-craler.com/engine"
 	"regexp"
 )
@@ -15,8 +16,8 @@ func ParseCityList(bytes []byte) engine.ParseResult {
 	for _, match := range matches {
 		//fmt.Println("match:", match)
 		url := match[1]
-		//city := match[2]
-		//fmt.Printf("url:%s, city:%s\n", string(url), string(city))
+		city := match[2]
+		fmt.Printf("url:%s, city:%s\n", string(url), string(city))
 		results.Requests = append(
 			results.Requests,
 			engine.Request{

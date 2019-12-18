@@ -10,10 +10,14 @@ import (
 func main() {
 	//获得城市列表页的HTML内容
 	//resp, err := http.Get("http://www.zhenai.com/zhenghun/")
+	item, err := persist.ItemSaver("date_profile")
+	if err != nil {
+		panic(err)
+	}
 	e := engine.ConcurrentEngine{
 		Scheduler:   &scheduler.QueuedScheduler{},
 		WorkerCount: 10,
-		ItemChan:    persist.ItemSaver(),
+		ItemChan:    item,
 	}
 	/*
 		e.Run(engine.Request{Url: "http://www.zhenai.com/zhenghun/", ParserFunc: parser.ParseCityList})

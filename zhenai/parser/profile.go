@@ -16,11 +16,18 @@ const numRe = `([0-9]+)`
 
 var regex = regexp.MustCompile(profileRe)
 var regexNum = regexp.MustCompile(numRe)
+var regexId = regexp.MustCompile(`//album.zhenai.com/u/([\d]+)`)
 
-func ParseProfile(bytes []byte, name string, gender string) engine.ParseResult {
+func ParseProfile(bytes []byte, name string, gender string, url string) engine.ParseResult {
 	matches := regex.FindAllSubmatch(bytes, -1)
 	profile := model.Profile{Name: name, Gender: gender}
 	results := engine.ParseResult{}
+	var id string
+	matchesId := regexId.FindAllSubmatch([]byte(url), -1)
+	for _, match := range matchesId {
+		id = string(match[1])
+		break
+	}
 
 	for _, match := range matches {
 		matchData := strings.Split(string(match[1]), "|")
@@ -51,14 +58,18 @@ func ParseProfile(bytes []byte, name string, gender string) engine.ParseResult {
 		}
 	}
 
-	//printProfile(profile)
-	results.Items = append(results.Items, profile)
+	results.Items = append(results.Items, engine.Item{
+		Url:     url,
+		Id:      id,
+		Type:    "zhenai",
+		Payload: profile,
+	})
 
 	return results
 
 }
 
-func printProfile(i interface{}) {
+func PrintProfile(i interface{}) {
 	t := reflect.TypeOf(i)
 	v := reflect.ValueOf(i)
 	for i := 0; i < t.NumField(); i++ {

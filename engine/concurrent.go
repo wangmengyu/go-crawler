@@ -4,9 +4,9 @@ package engine
   并发版的引擎
 */
 type ConcurrentEngine struct {
-	Scheduler   Scheduler        // 调度器
-	WorkerCount int              // 并发数量
-	ItemChan    chan interface{} //用于save的管道
+	Scheduler   Scheduler // 调度器
+	WorkerCount int       // 并发数量
+	ItemChan    chan Item //用于save的管道
 }
 
 /**

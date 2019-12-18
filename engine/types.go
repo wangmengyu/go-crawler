@@ -7,7 +7,7 @@ package engine
 */
 type Request struct {
 	Url        string
-	ParserFunc func([]byte) ParseResult
+	ParserFunc func(contents []byte) ParseResult
 }
 
 /**
@@ -17,8 +17,15 @@ type Request struct {
 */
 type ParseResult struct {
 	Requests []Request
-	Items    []interface{} // interface{} 代表任何类型
+	Items    []Item // interface{} 代表任何类型
 
+}
+
+type Item struct {
+	Url     string
+	Id      string
+	Type    string
+	Payload interface{}
 }
 
 func NilParse([]byte) ParseResult {
