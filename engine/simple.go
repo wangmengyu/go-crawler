@@ -6,7 +6,7 @@ import (
 )
 
 /**
-简单调度器
+  简单调度器
 */
 type SimpleEngine struct {
 }
@@ -43,7 +43,7 @@ func (e SimpleEngine) Run(seeds ...Request) {
 
 func Worker(r Request) (ParseResult, error) {
 	//获取网页内容
-	log.Printf("Fetching %s", r.Url)
+	//log.Printf("Fetching %s", r.Url)
 
 	bodys, err := fetcher.Fetch(r.Url)
 	if err != nil {

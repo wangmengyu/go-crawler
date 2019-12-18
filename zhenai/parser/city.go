@@ -7,13 +7,17 @@ import (
 )
 
 const cityRe = `<a href="(http://album.zhenai.com/u/[0-9]+)"[^>]*>([^<]+)</a>`
+
+var regexCity = regexp.MustCompile(cityRe)
+
 const genderRe = `<span class="grayL">性别：</span>([^<]+)</td>`
+
+var regexGen = regexp.MustCompile(genderRe)
+var cityUrlRe = regexp.MustCompile(`href="(http://www.zhenai.com/zhenghun/shanghai/[^"]+)">`)
 
 func ParseCity(bytes []byte) engine.ParseResult {
 	results := engine.ParseResult{}
-	regex := regexp.MustCompile(cityRe)
-	matches := regex.FindAllSubmatch(bytes, -1)
-	regexGen := regexp.MustCompile(genderRe)
+	matches := regexCity.FindAllSubmatch(bytes, -1)
 	matchesGen := regexGen.FindAllSubmatch(bytes, -1)
 	for i, match := range matches {
 		//fmt.Println("match:", match)
@@ -31,6 +35,13 @@ func ParseCity(bytes []byte) engine.ParseResult {
 			})
 		results.Items = append(results.Items, "User "+string(user))
 
+	}
+	matches = cityUrlRe.FindAllSubmatch(bytes, -1)
+	for _, m := range matches {
+		results.Requests = append(results.Requests, engine.Request{
+			Url:        string(m[1]),
+			ParserFunc: ParseCity,
+		})
 	}
 
 	return results

@@ -1,6 +1,7 @@
 package engine
 
 import (
+	"go-craler.com/model"
 	"log"
 )
 
@@ -43,21 +44,45 @@ func (e *ConcurrentEngine) Run(seeds ...Request) {
 
 	//在channel都建立好之后再提交数据
 	for _, r := range seeds {
+		if isDuplicate(r.Url) {
+			//log.Printf("重复的url:%s", r.Url)
+			continue
+		}
 		e.Scheduler.Submit(r)
 	}
 
 	//从out chan不断读取数据出来进行打印
 	for {
 		result := <-out
+		profileCount := 0
 		for _, item := range result.Items {
-			log.Printf("Got items: %v", item)
+			_, ok := item.(model.Profile)
+			if ok {
+				log.Printf("Got profile: #%d:%v", profileCount, item)
+				profileCount++
+			}
 		}
 
+		// url 去重 dedup
 		for _, request := range result.Requests {
+			if isDuplicate(request.Url) {
+				//log.Printf("重复的url:%s", request.Url)
+				continue
+			}
 			e.Scheduler.Submit(request)
 		}
 	}
 
+}
+
+var visitedUrls = make(map[string]bool)
+
+func isDuplicate(url string) bool {
+	if visitedUrls[url] {
+		return true
+	}
+	visitedUrls[url] = true
+	return false
 }
 
 /**

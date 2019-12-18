@@ -15,7 +15,7 @@ import (
 /**
   获得指定url的HTML的UTF-8编码内容
 */
-var rateLimiter = time.Tick(10 * time.Millisecond)
+var rateLimiter = time.Tick(1000 * time.Millisecond)
 
 func Fetch(url string) ([]byte, error) {
 	//获得城市列表页的HTML内容
