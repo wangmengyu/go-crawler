@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="358d81ac-c74f-42d0-bd7a-b0f0dc544743" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/persist/itemsaver_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/concurrent.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/concurrent.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/types.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fetcher/fetcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/fetcher/fetcher.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/profile.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/profile.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persist/itemsaver.go" beforeDir="false" afterPath="$PROJECT_DIR$/persist/itemsaver.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhenai/parser/city.go" beforeDir="false" afterPath="$PROJECT_DIR$/zhenai/parser/city.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhenai/parser/citylist.go" beforeDir="false" afterPath="$PROJECT_DIR$/zhenai/parser/citylist.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhenai/parser/citylist_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/zhenai/parser/citylist_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhenai/parser/profile.go" beforeDir="false" afterPath="$PROJECT_DIR$/zhenai/parser/profile.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhenai/parser/profile_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/zhenai/parser/profile_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,14 +50,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/zhenai/parser" />
+      <recent name="$PROJECT_DIR$/doc" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/zhenai/parser" />
       <recent name="$PROJECT_DIR$/doc" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/zhenai/parser" />
-      <recent name="$PROJECT_DIR$/doc" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -178,7 +164,8 @@
     <MESSAGE value="并发" />
     <MESSAGE value="并发版本爬虫" />
     <MESSAGE value="存储的架构" />
-    <option name="LAST_COMMIT_MESSAGE" value="存储的架构" />
+    <MESSAGE value="ID,URL的提取" />
+    <option name="LAST_COMMIT_MESSAGE" value="ID,URL的提取" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -189,11 +176,11 @@
       <screen x="0" y="23" width="1280" height="704" />
     </state>
     <state x="140" y="23" key="#Go_Modules_(vgo)/0.23.1280.704@0.23.1280.704" timestamp="1576023941765" />
-    <state x="131" y="23" key="CommitChangelistDialog2" timestamp="1576640037022">
-      <screen x="0" y="23" width="1280" height="708" />
+    <state x="131" y="23" key="CommitChangelistDialog2" timestamp="1576658124891">
+      <screen x="0" y="23" width="1280" height="706" />
     </state>
     <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.704@0.23.1280.704" timestamp="1576630399081" />
-    <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.706@0.23.1280.706" timestamp="1576053240177" />
+    <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.706@0.23.1280.706" timestamp="1576658124891" />
     <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.708@0.23.1280.708" timestamp="1576640037022" />
     <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.710@0.23.1280.710" timestamp="1576064628532" />
     <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.723@0.23.1280.723" timestamp="1576152826807" />
@@ -237,11 +224,11 @@
     <state width="1226" height="26" key="GridCell.Tab.0.right/0.23.1280.710@0.23.1280.710" timestamp="1576064688509" />
     <state width="1226" height="161" key="GridCell.Tab.0.right/0.23.1280.723@0.23.1280.723" timestamp="1576152910199" />
     <state width="1226" height="161" key="GridCell.Tab.0.right/0.23.1280.724@0.23.1280.724" timestamp="1576152286786" />
-    <state x="140" y="53" key="Vcs.Push.Dialog.v2" timestamp="1576640040690">
-      <screen x="0" y="23" width="1280" height="708" />
+    <state x="140" y="53" key="Vcs.Push.Dialog.v2" timestamp="1576658130452">
+      <screen x="0" y="23" width="1280" height="706" />
     </state>
     <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.704@0.23.1280.704" timestamp="1576237523643" />
-    <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.706@0.23.1280.706" timestamp="1576053244967" />
+    <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.706@0.23.1280.706" timestamp="1576658130452" />
     <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.708@0.23.1280.708" timestamp="1576640040690" />
     <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.710@0.23.1280.710" timestamp="1576064632593" />
     <state x="140" y="54" key="Vcs.Push.Dialog.v2/0.23.1280.723@0.23.1280.723" timestamp="1576152900981" />
