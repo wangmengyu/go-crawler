@@ -33,7 +33,7 @@ func TestSave(t *testing.T) {
 		elastic.SetSniff(false), //部署在docker上面是内网，没办法sniff
 	)
 	index := "dating_test"
-	err = save(expeted, client, index)
+	err = Save(expeted, client, index)
 	if err != nil {
 		panic(err)
 	}
