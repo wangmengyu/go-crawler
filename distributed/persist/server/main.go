@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"github.com/olivere/elastic/v7"
+	"go-craler.com/distributed/config"
 	"go-craler.com/distributed/persist"
 	"go-craler.com/distributed/rpcsupport"
 )
@@ -14,8 +16,8 @@ func main() {
 		panic(err)
 	}
 
-	err = rpcsupport.ServeRpc(":1234", &persist.ItemSaverService{
+	err = rpcsupport.ServeRpc(fmt.Sprintf(":%d", config.ItemSaverPort), &persist.ItemSaverService{
 		Client: client,
-		Index:  "dating_profile",
+		Index:  config.ElasticIndex,
 	})
 }

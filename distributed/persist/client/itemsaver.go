@@ -1,6 +1,7 @@
 package client
 
 import (
+	"go-craler.com/distributed/config"
 	"go-craler.com/distributed/rpcsupport"
 	"go-craler.com/engine"
 	"log"
@@ -23,7 +24,7 @@ func ItemSaver(host string) (chan engine.Item, error) {
 
 			//cal rpc to save item
 			result := ""
-			err = client.Call("ItemSaverService.Save", item, &result)
+			err = client.Call(config.ItemSaverRpc, item, &result)
 
 			if err != nil {
 				log.Printf("Item saver: error saving item %v: %v", item, err)

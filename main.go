@@ -10,7 +10,7 @@ import (
 func main() {
 	//获得城市列表页的HTML内容
 	//resp, err := http.Get("http://www.zhenai.com/zhenghun/")
-	item, err := client.ItemSaver(":1234")
+	item, err := client.ItemSaver(fmt.Sprintf(":%d", config.ItemSaverPort))
 	if err != nil {
 		panic(err)
 	}
