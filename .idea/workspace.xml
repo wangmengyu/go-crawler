@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="358d81ac-c74f-42d0-bd7a-b0f0dc544743" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/distributed/worker/types.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/engine/worker.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/distributed/worker/client/worker.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/distributed/worker/rpc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/distributed/worker/server/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/distributed/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/distributed/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/distributed/worker/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/distributed/worker/types.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/concurrent.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/concurrent.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/simple.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/simple.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/types.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/worker.go" beforeDir="false" afterPath="$PROJECT_DIR$/engine/worker.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zhenai/parser/city.go" beforeDir="false" afterPath="$PROJECT_DIR$/zhenai/parser/city.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zhenai/parser/citylist.go" beforeDir="false" afterPath="$PROJECT_DIR$/zhenai/parser/citylist.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zhenai/parser/profile.go" beforeDir="false" afterPath="$PROJECT_DIR$/zhenai/parser/profile.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,13 +113,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager" selected="Go Build.go build go-craler.com/distributed/persist/server">
     <configuration name="go build go-craler.com/distributed/persist/server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-crawler" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
       <filePath value="$PROJECT_DIR$/distributed/persist/server/main.go" />
       <package value="go-craler.com/distributed/persist/server" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build go-craler.com/distributed/worker/server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go-crawler" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/distributed/worker/server/main.go" />
+      <package value="go-craler.com/distributed/worker/server" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -138,17 +150,6 @@
       <pattern value="^TestParseCityList$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestParseProfile in go-craler.com/zhenai/parser" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-crawler" />
-      <working_directory value="$PROJECT_DIR$/zhenai/parser" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="go-craler.com/zhenai/parser" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestParseProfile$" />
-      <method v="2" />
-    </configuration>
     <configuration name="TestSave in go-craler.com/persist" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-crawler" />
       <working_directory value="$PROJECT_DIR$/persist" />
@@ -163,10 +164,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build go-craler.com/distributed/worker/server" />
         <item itemvalue="Go Build.go build go-craler.com/distributed/persist/server" />
         <item itemvalue="Go Test.TestSave in go-craler.com/persist" />
         <item itemvalue="Go Test.TestParseCityList in go-craler.com/zhenai/parser" />
-        <item itemvalue="Go Test.TestParseProfile in go-craler.com/zhenai/parser" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +202,8 @@
     <MESSAGE value="方法重构" />
     <MESSAGE value="go-redis duplicate" />
     <MESSAGE value="distributed save" />
-    <option name="LAST_COMMIT_MESSAGE" value="distributed save" />
+    <MESSAGE value="方法序列化" />
+    <option name="LAST_COMMIT_MESSAGE" value="方法序列化" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -216,10 +218,10 @@
       <screen x="0" y="23" width="1280" height="706" />
     </state>
     <state x="336" y="209" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1280.706@0.23.1280.706" timestamp="1576745179190" />
-    <state x="131" y="23" key="CommitChangelistDialog2" timestamp="1576809483855">
+    <state x="131" y="23" key="CommitChangelistDialog2" timestamp="1576824737954">
       <screen x="0" y="23" width="1280" height="704" />
     </state>
-    <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.704@0.23.1280.704" timestamp="1576809483855" />
+    <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.704@0.23.1280.704" timestamp="1576824737954" />
     <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.706@0.23.1280.706" timestamp="1576747268664" />
     <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.708@0.23.1280.708" timestamp="1576640037022" />
     <state x="131" y="23" key="CommitChangelistDialog2/0.23.1280.710@0.23.1280.710" timestamp="1576064628532" />
@@ -228,64 +230,65 @@
       <screen x="0" y="23" width="1280" height="704" />
     </state>
     <state x="100" y="123" width="1080" height="504" key="DiffContextDialog/0.23.1280.704@0.23.1280.704" timestamp="1576824276150" />
-    <state width="1226" height="251" key="GridCell.Tab.0.bottom" timestamp="1576824688048">
+    <state width="1226" height="235" key="GridCell.Tab.0.bottom" timestamp="1576832651115">
       <screen x="0" y="23" width="1280" height="704" />
     </state>
     <state width="1226" height="21" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1576649341172" />
-    <state width="1226" height="251" key="GridCell.Tab.0.bottom/0.23.1280.704@0.23.1280.704" timestamp="1576824688048" />
+    <state width="1226" height="235" key="GridCell.Tab.0.bottom/0.23.1280.704@0.23.1280.704" timestamp="1576832651115" />
     <state width="1226" height="254" key="GridCell.Tab.0.bottom/0.23.1280.706@0.23.1280.706" timestamp="1576755253156" />
     <state width="1226" height="270" key="GridCell.Tab.0.bottom/0.23.1280.708@0.23.1280.708" timestamp="1576649797154" />
     <state width="1226" height="26" key="GridCell.Tab.0.bottom/0.23.1280.710@0.23.1280.710" timestamp="1576064688510" />
     <state width="1226" height="161" key="GridCell.Tab.0.bottom/0.23.1280.723@0.23.1280.723" timestamp="1576152910200" />
     <state width="1226" height="161" key="GridCell.Tab.0.bottom/0.23.1280.724@0.23.1280.724" timestamp="1576152286787" />
-    <state width="1226" height="251" key="GridCell.Tab.0.center" timestamp="1576824688048">
+    <state width="1226" height="235" key="GridCell.Tab.0.center" timestamp="1576832651115">
       <screen x="0" y="23" width="1280" height="704" />
     </state>
     <state width="1226" height="21" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1576649341171" />
-    <state width="1226" height="251" key="GridCell.Tab.0.center/0.23.1280.704@0.23.1280.704" timestamp="1576824688048" />
+    <state width="1226" height="235" key="GridCell.Tab.0.center/0.23.1280.704@0.23.1280.704" timestamp="1576832651115" />
     <state width="1226" height="254" key="GridCell.Tab.0.center/0.23.1280.706@0.23.1280.706" timestamp="1576755253156" />
     <state width="1226" height="270" key="GridCell.Tab.0.center/0.23.1280.708@0.23.1280.708" timestamp="1576649797153" />
     <state width="1226" height="26" key="GridCell.Tab.0.center/0.23.1280.710@0.23.1280.710" timestamp="1576064688509" />
     <state width="1226" height="161" key="GridCell.Tab.0.center/0.23.1280.723@0.23.1280.723" timestamp="1576152910199" />
     <state width="1226" height="161" key="GridCell.Tab.0.center/0.23.1280.724@0.23.1280.724" timestamp="1576152286785" />
-    <state width="1226" height="251" key="GridCell.Tab.0.left" timestamp="1576824688048">
+    <state width="1226" height="235" key="GridCell.Tab.0.left" timestamp="1576832651114">
       <screen x="0" y="23" width="1280" height="704" />
     </state>
     <state width="1226" height="21" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1576649341170" />
-    <state width="1226" height="251" key="GridCell.Tab.0.left/0.23.1280.704@0.23.1280.704" timestamp="1576824688048" />
+    <state width="1226" height="235" key="GridCell.Tab.0.left/0.23.1280.704@0.23.1280.704" timestamp="1576832651114" />
     <state width="1226" height="254" key="GridCell.Tab.0.left/0.23.1280.706@0.23.1280.706" timestamp="1576755253155" />
     <state width="1226" height="270" key="GridCell.Tab.0.left/0.23.1280.708@0.23.1280.708" timestamp="1576649797152" />
     <state width="1226" height="26" key="GridCell.Tab.0.left/0.23.1280.710@0.23.1280.710" timestamp="1576064688509" />
     <state width="1226" height="161" key="GridCell.Tab.0.left/0.23.1280.723@0.23.1280.723" timestamp="1576152910199" />
     <state width="1226" height="161" key="GridCell.Tab.0.left/0.23.1280.724@0.23.1280.724" timestamp="1576152286784" />
-    <state width="1226" height="251" key="GridCell.Tab.0.right" timestamp="1576824688048">
+    <state width="1226" height="235" key="GridCell.Tab.0.right" timestamp="1576832651115">
       <screen x="0" y="23" width="1280" height="704" />
     </state>
     <state width="1226" height="21" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1576649341171" />
-    <state width="1226" height="251" key="GridCell.Tab.0.right/0.23.1280.704@0.23.1280.704" timestamp="1576824688048" />
+    <state width="1226" height="235" key="GridCell.Tab.0.right/0.23.1280.704@0.23.1280.704" timestamp="1576832651115" />
     <state width="1226" height="254" key="GridCell.Tab.0.right/0.23.1280.706@0.23.1280.706" timestamp="1576755253156" />
     <state width="1226" height="270" key="GridCell.Tab.0.right/0.23.1280.708@0.23.1280.708" timestamp="1576649797154" />
     <state width="1226" height="26" key="GridCell.Tab.0.right/0.23.1280.710@0.23.1280.710" timestamp="1576064688509" />
     <state width="1226" height="161" key="GridCell.Tab.0.right/0.23.1280.723@0.23.1280.723" timestamp="1576152910199" />
     <state width="1226" height="161" key="GridCell.Tab.0.right/0.23.1280.724@0.23.1280.724" timestamp="1576152286786" />
-    <state x="140" y="53" key="Vcs.Push.Dialog.v2" timestamp="1576809491020">
+    <state x="140" y="53" key="Vcs.Push.Dialog.v2" timestamp="1576824740778">
       <screen x="0" y="23" width="1280" height="704" />
     </state>
-    <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.704@0.23.1280.704" timestamp="1576809491020" />
+    <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.704@0.23.1280.704" timestamp="1576824740778" />
     <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.706@0.23.1280.706" timestamp="1576754910981" />
     <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.708@0.23.1280.708" timestamp="1576640040690" />
     <state x="140" y="53" key="Vcs.Push.Dialog.v2/0.23.1280.710@0.23.1280.710" timestamp="1576064632593" />
     <state x="140" y="54" key="Vcs.Push.Dialog.v2/0.23.1280.723@0.23.1280.723" timestamp="1576152900981" />
-    <state x="249" y="89" width="782" height="574" key="find.popup" timestamp="1576822045140">
-      <screen x="0" y="23" width="1280" height="706" />
+    <state x="249" y="76" width="959" height="651" key="find.popup" timestamp="1576832412560">
+      <screen x="0" y="23" width="1280" height="704" />
     </state>
-    <state x="249" y="76" width="959" height="651" key="find.popup/0.23.1280.704@0.23.1280.704" timestamp="1576573056205" />
+    <state x="249" y="76" width="959" height="651" key="find.popup/0.23.1280.704@0.23.1280.704" timestamp="1576832412560" />
     <state x="249" y="89" width="782" height="574" key="find.popup/0.23.1280.706@0.23.1280.706" timestamp="1576822045140" />
     <state x="249" y="76" width="959" height="655" key="find.popup/0.23.1280.708@0.23.1280.708" timestamp="1576809220364" />
     <state x="249" y="77" width="959" height="656" key="find.popup/0.23.1280.710@0.23.1280.710" timestamp="1576063204887" />
-    <state x="346" y="23" key="refactoring.ChangeSignatureDialog" timestamp="1576734957594">
-      <screen x="0" y="23" width="1280" height="706" />
+    <state x="346" y="23" key="refactoring.ChangeSignatureDialog" timestamp="1576832476631">
+      <screen x="0" y="23" width="1280" height="704" />
     </state>
+    <state x="346" y="23" key="refactoring.ChangeSignatureDialog/0.23.1280.704@0.23.1280.704" timestamp="1576832476631" />
     <state x="346" y="23" key="refactoring.ChangeSignatureDialog/0.23.1280.706@0.23.1280.706" timestamp="1576734957594" />
   </component>
 </project>

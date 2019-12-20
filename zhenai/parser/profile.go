@@ -105,12 +105,16 @@ func (p *ProfileParser) Parse(contents []byte, url string) engine.ParseResult {
 }
 
 func (p *ProfileParser) Serialize() (name string, args interface{}) {
-	return "ParseProfile", p
+	profileMap := make(map[string]string)
+	profileMap["name"] = p.name
+	profileMap["gender"] = p.gender
+	return "ParseProfile", profileMap
 }
 
 /**
   工厂方法 付初值
 */
-func NewProfileParser(name string, gender string) *ProfileParser {
-	return &ProfileParser{name: name, gender: gender}
+func NewProfileParser(p map[string]interface{}) *ProfileParser {
+	log.Printf("set profilr parser:%v", p)
+	return &ProfileParser{name: p["name"].(string), gender: p["gender"].(string)}
 }

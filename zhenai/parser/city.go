@@ -25,12 +25,14 @@ func ParseCity(bytes []byte, _ string) engine.ParseResult {
 		user := match[2] // 此处必须深度拷贝。因为该参数回传递给后续的抓取，只有深度拷贝才不会调用match.
 		gender := matchesGen[i][1]
 		fmt.Printf("url:%s, user:%s\n", string(url), string(user))
+		profileMap := make(map[string]interface{})
+		profileMap["name"] = string(user)
+		profileMap["gender"] = string(gender)
 		results.Requests = append(
 			results.Requests,
 			engine.Request{
 				Url:    string(url),
-				Parser: NewProfileParser(string(user), string(gender)),
-			})
+				Parser: NewProfileParser(profileMap)})
 		//results.Items = append(results.Items, "User "+string(user))
 
 	}

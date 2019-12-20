@@ -7,13 +7,16 @@ import (
 	"log"
 )
 
+type Processor func(Request) (ParseResult, error)
+
 /**
   并发版的引擎
 */
 type ConcurrentEngine struct {
-	Scheduler   Scheduler // 调度器
-	WorkerCount int       // 并发数量
-	ItemChan    chan Item //用于save的管道
+	Scheduler        Scheduler // 调度器
+	WorkerCount      int       // 并发数量
+	ItemChan         chan Item //用于save的管道
+	RequestProcessor Processor //处理请求的类型，原来的Worker
 }
 
 /**
@@ -46,7 +49,7 @@ func (e *ConcurrentEngine) Run(seeds ...Request) {
 
 	//开启并发worker
 	for i := 0; i < e.WorkerCount; i++ {
-		createWorker(e.Scheduler.WorkerChan(), out, e.Scheduler)
+		e.createWorker(e.Scheduler.WorkerChan(), out, e.Scheduler)
 	}
 
 	//在channel都建立好之后再提交数据
@@ -102,13 +105,13 @@ func isDuplicate(client *redis.Client, url string) (bool, error) {
 /**
 创建并发的worker
 */
-func createWorker(in chan Request, out chan ParseResult, ready ReadyNotifier) {
+func (e *ConcurrentEngine) createWorker(in chan Request, out chan ParseResult, ready ReadyNotifier) {
 
 	go func() {
 		for {
 			ready.WorkerReady(in)
 			request := <-in
-			result, err := Worker(request)
+			result, err := e.RequestProcessor(request)
 			if err != nil {
 				continue
 			}

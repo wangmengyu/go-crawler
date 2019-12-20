@@ -5,7 +5,7 @@ import (
 	"log"
 )
 
-func worker(r Request) (ParseResult, error) {
+func Worker(r Request) (ParseResult, error) {
 	//获取网页内容
 	//log.Printf("Fetching %s", r.Url)
 

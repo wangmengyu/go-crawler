@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"go-craler.com/distributed/config"
 	"go-craler.com/distributed/persist/client"
+	workerClient "go-craler.com/distributed/worker/client"
 	"go-craler.com/engine"
 	"go-craler.com/scheduler"
 	"go-craler.com/zhenai/parser"
@@ -16,10 +17,15 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	processor, err := workerClient.CreateProcessor()
+	if err != nil {
+		panic(err)
+	}
 	e := engine.ConcurrentEngine{
-		Scheduler:   &scheduler.QueuedScheduler{},
-		WorkerCount: 10,
-		ItemChan:    item,
+		Scheduler:        &scheduler.QueuedScheduler{},
+		WorkerCount:      10,
+		ItemChan:         item,
+		RequestProcessor: processor,
 	}
 	/*
 		e.Run(engine.Request{Url: "http://www.zhenai.com/zhenghun/", Parser: parser.ParseCityList})
@@ -27,6 +33,6 @@ func main() {
 	*/
 
 	e.Run(engine.Request{Url: "http://www.zhenai.com/zhenghun/shanghai",
-		Parser: engine.NewFuncParser(parser.ParseCity, "ParseCity")})
+		Parser: engine.NewFuncParser(parser.ParseCity, config.ParseCity)})
 
 }
