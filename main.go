@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+	"go-craler.com/distributed/config"
 	"go-craler.com/distributed/persist/client"
 	"go-craler.com/engine"
 	"go-craler.com/scheduler"
@@ -20,10 +22,11 @@ func main() {
 		ItemChan:    item,
 	}
 	/*
-		e.Run(engine.Request{Url: "http://www.zhenai.com/zhenghun/", ParserFunc: parser.ParseCityList})
+		e.Run(engine.Request{Url: "http://www.zhenai.com/zhenghun/", Parser: parser.ParseCityList})
 
 	*/
 
-	e.Run(engine.Request{Url: "http://www.zhenai.com/zhenghun/shanghai", ParserFunc: parser.ParseCity})
+	e.Run(engine.Request{Url: "http://www.zhenai.com/zhenghun/shanghai",
+		Parser: engine.NewFuncParser(parser.ParseCity, "ParseCity")})
 
 }

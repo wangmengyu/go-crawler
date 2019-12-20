@@ -94,3 +94,23 @@ func getFirstIntFromStr(bytes []byte) int {
 	}
 	return 0
 }
+
+type ProfileParser struct {
+	name   string
+	gender string
+}
+
+func (p *ProfileParser) Parse(contents []byte, url string) engine.ParseResult {
+	return ParseProfile(contents, p.name, p.gender, url)
+}
+
+func (p *ProfileParser) Serialize() (name string, args interface{}) {
+	return "ParseProfile", p
+}
+
+/**
+  工厂方法 付初值
+*/
+func NewProfileParser(name string, gender string) *ProfileParser {
+	return &ProfileParser{name: name, gender: gender}
+}

@@ -52,6 +52,6 @@ func Worker(r Request) (ParseResult, error) {
 	}
 
 	//将bodys内容进行解析
-	parseResult := r.ParserFunc(bodys)
+	parseResult := r.Parser.Parse(bodys, r.Url)
 	return parseResult, nil
 }
