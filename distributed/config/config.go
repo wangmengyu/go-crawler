@@ -1,9 +1,8 @@
 package config
 
 const (
-	// service port
-	ItemSaverPort = 1234
-	WorkderPort0  = 9000
+	// rate limit
+	Qps = 1
 
 	//es table name
 	ElasticIndex = "dating_profile"

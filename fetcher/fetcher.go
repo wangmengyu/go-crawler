@@ -3,6 +3,7 @@ package fetcher
 import (
 	"bufio"
 	"fmt"
+	"go-craler.com/distributed/config"
 	"golang.org/x/net/html/charset"
 	"golang.org/x/text/encoding"
 	"golang.org/x/text/transform"
@@ -15,11 +16,12 @@ import (
 /**
   获得指定url的HTML的UTF-8编码内容
 */
-var rateLimiter = time.Tick(1000 * time.Millisecond)
+var rateLimiter = time.Tick(time.Second / config.Qps)
 
 func Fetch(url string) ([]byte, error) {
 	//获得城市列表页的HTML内容
 	<-rateLimiter //限速
+	log.Printf("Fetching url %s", url)
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {

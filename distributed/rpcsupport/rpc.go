@@ -20,6 +20,7 @@ func ServeRpc(host string, service interface{}) error {
 	if err != nil {
 		return err
 	}
+	log.Printf("listen on port:%s", host)
 
 	//一直从tcp接收信息，
 	for {
